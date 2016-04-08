@@ -49,7 +49,7 @@ end
 
 ### Building your Shell script
 
-After the vagrant box is setup and a working directory we need to setup the LAMP environment on the server. We will be doing this through a basic shell script.
+After the vagrant box is setup and a working directory we need to setup the NodeJS environment on the server. We will be doing this through a basic shell script.
 
 Firstly we need to create a shell script, I called mine "script.sh". My command is to firstly update the box:
 
@@ -84,7 +84,7 @@ sudo apt-get -y install nodejs
 ```
 
 
-Once we've added all of that to the "setup.sh" file we go into the Vagrantfile to define the startup script for our LAMP environment:
+Once we've added all of that to the "setup.sh" file we go into the Vagrantfile to define the startup script for our NodeJS environment:
 
 ```
 Vagrant.configure(2) do |config|
@@ -123,7 +123,9 @@ to apply our changes to the vagrant server
 Since your done provisioning the vagrant server all we need to do now is ssh into the machine and start up our node server.
 
 > $ vagrant ssh
+
 > $ cd /var/www/node
+
 > $ node httpserver.js
 
 The server should then prompt you that it is listening on port 8080, sooooo simply go into your browser and enter 192.168.205.11:8080
